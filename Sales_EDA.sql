@@ -1,106 +1,56 @@
-# /\*
+/*
+===============================================================================
+Project: Business Insights and Sales Analysis - SQL Script
+===============================================================================
+Description:
+    This SQL script performs a comprehensive analysis on a retail sales database.
+    It is designed to provide insights into customer behavior, product performance,
+    and overall business metrics. The script is structured into multiple sections
+    covering data exploration, key performance indicators (KPIs), trend analysis,
+    and customer segmentation.
 
-# Sales Analytics SQL Project Documentation
-
-Project Purpose:
-\- To perform a comprehensive sales analysis using SQL.
-\- To extract business insights across customers, products, sales, trends, and geography.
-\- To generate key metrics and perform various types of analyses (magnitude, cumulative, time-series, segmentation).
-
-Schema: gold
-Tables Used:
-\- gold.dim\_customers
-\- gold.dim\_products
-\- gold.fact\_sales
-
-\===============================================================================
-
+Script Sections:
+-------------------------------------------------------------------------------
 1. Database Exploration
-   \===============================================================================
-   Purpose:
+    -- Explore tables, columns, and metadata.
 
-   * To explore the structure of the database, including the list of tables and their schemas.
-   * To inspect the columns and metadata for specific tables.
+2. Dimension Insights
+    -- Analyze distinct values in customer countries and product categories.
 
-Tables Queried:
-\- INFORMATION\_SCHEMA.TABLES
-\- INFORMATION\_SCHEMA.COLUMNS
+3. Sales Overview
+    -- Compute total sales, quantity, orders, and price metrics.
 
-\===============================================================================
-2\. Basic Business KPIs
-=======================
+4. Customer Demographics
+    -- Identify age extremes, total customers, and order participation.
 
-Queries:
-\- Total sales, total quantity, total orders, average price, total products, total customers.
-\- First and last order dates, number of years of sales.
-\- Youngest and oldest customers.
-\- Number of customers who placed orders.
+5. Key Business Metrics Summary
+    -- Aggregate all main KPIs into a single unified report.
 
-\===============================================================================
-3\. Business Report Summary
-===========================
+6. Magnitude Analysis
+    -- Breakdown of customer and product distributions by category, country, etc.
 
-Purpose:
-\- To consolidate all key metrics into a unified report using UNION ALL.
+7. Revenue and Sales Analysis
+    -- Evaluate revenue by category, product, and customer.
 
-\===============================================================================
-4\. Magnitude Analysis
-======================
+8. Sales Trends Over Time
+    -- Annual sales changes and cumulative sales tracking.
 
-Queries:
-\- Total customers by country and gender.
-\- Total products by category.
-\- Average cost per category.
-\- Revenue per category.
-\- Revenue per customer.
-\- Item distribution across countries.
+9. Product Performance Evaluation
+    -- Identify top-performing and worst-performing products.
 
-\===============================================================================
-5\. Product Performance Analysis
-================================
+10. Year-over-Year Product Comparison
+    -- Compare current vs. previous years and vs. product average sales.
 
-Queries:
-\- Top 5 best-selling products.
-\- 5 worst-performing products.
+11. Category Contribution Analysis
+    -- Measure each category’s contribution to overall sales.
 
-\===============================================================================
-6\. Trend and Time Series Analysis
-==================================
+12. Product Cost Segmentation
+    -- Group products into price segments for cost distribution.
 
-Queries:
-\- Annual trends: total sales, customers, and quantity.
-\- Cumulative analysis: running total and moving average by year.
+13. Customer Segmentation
+    -- Classify customers into VIP, Regular, and New based on behavior.
 
-\===============================================================================
-7\. Yearly Product Performance Comparison
-=========================================
-
-Purpose:
-\- Compare product performance against average and previous years.
-\- Show directional trends (increase/decrease/flat).
-
-\===============================================================================
-8\. Sales Contribution by Category
-==================================
-
-Purpose:
-\- Calculate contribution of each category to overall revenue.
-
-\===============================================================================
-9\. Product Cost Segmentation
-=============================
-
-Purpose:
-\- Categorize products into cost segments and count them.
-
-\===============================================================================
-10\. Customer Segmentation
-==========================
-
-Purpose:
-\- Classify customers as VIP, Regular, or New based on spending and history.
-\- Count total customers in each segment.
-\*/
+*/
 
 -- Explore All objects in the database
 SELECT *

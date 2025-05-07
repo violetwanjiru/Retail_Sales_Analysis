@@ -1,3 +1,107 @@
+# /\*
+
+# Sales Analytics SQL Project Documentation
+
+Project Purpose:
+\- To perform a comprehensive sales analysis using SQL.
+\- To extract business insights across customers, products, sales, trends, and geography.
+\- To generate key metrics and perform various types of analyses (magnitude, cumulative, time-series, segmentation).
+
+Schema: gold
+Tables Used:
+\- gold.dim\_customers
+\- gold.dim\_products
+\- gold.fact\_sales
+
+\===============================================================================
+
+1. Database Exploration
+   \===============================================================================
+   Purpose:
+
+   * To explore the structure of the database, including the list of tables and their schemas.
+   * To inspect the columns and metadata for specific tables.
+
+Tables Queried:
+\- INFORMATION\_SCHEMA.TABLES
+\- INFORMATION\_SCHEMA.COLUMNS
+
+\===============================================================================
+2\. Basic Business KPIs
+=======================
+
+Queries:
+\- Total sales, total quantity, total orders, average price, total products, total customers.
+\- First and last order dates, number of years of sales.
+\- Youngest and oldest customers.
+\- Number of customers who placed orders.
+
+\===============================================================================
+3\. Business Report Summary
+===========================
+
+Purpose:
+\- To consolidate all key metrics into a unified report using UNION ALL.
+
+\===============================================================================
+4\. Magnitude Analysis
+======================
+
+Queries:
+\- Total customers by country and gender.
+\- Total products by category.
+\- Average cost per category.
+\- Revenue per category.
+\- Revenue per customer.
+\- Item distribution across countries.
+
+\===============================================================================
+5\. Product Performance Analysis
+================================
+
+Queries:
+\- Top 5 best-selling products.
+\- 5 worst-performing products.
+
+\===============================================================================
+6\. Trend and Time Series Analysis
+==================================
+
+Queries:
+\- Annual trends: total sales, customers, and quantity.
+\- Cumulative analysis: running total and moving average by year.
+
+\===============================================================================
+7\. Yearly Product Performance Comparison
+=========================================
+
+Purpose:
+\- Compare product performance against average and previous years.
+\- Show directional trends (increase/decrease/flat).
+
+\===============================================================================
+8\. Sales Contribution by Category
+==================================
+
+Purpose:
+\- Calculate contribution of each category to overall revenue.
+
+\===============================================================================
+9\. Product Cost Segmentation
+=============================
+
+Purpose:
+\- Categorize products into cost segments and count them.
+
+\===============================================================================
+10\. Customer Segmentation
+==========================
+
+Purpose:
+\- Classify customers as VIP, Regular, or New based on spending and history.
+\- Count total customers in each segment.
+\*/
+
 -- Explore All objects in the database
 SELECT *
 FROM INFORMATION_SCHEMA.TABLES;
@@ -269,8 +373,8 @@ GROUP BY cost_range
 ORDER BY total_products DESC;
 
 /*Group customers into three segments based on their spending behavior:
-       - VIP: Customers with at least 12 months of history and spending more than €5,000.
-       - Regular: Customers with at least 12 months of history but spending €5,000 or less
+       - VIP: Customers with at least 12 months of history and spending more than â‚¬5,000.
+       - Regular: Customers with at least 12 months of history but spending â‚¬5,000 or less
        - New: Customers with a lifespan less than 12 months.
 And find the total number of customers by each group
 */

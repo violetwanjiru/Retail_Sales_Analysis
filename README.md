@@ -1,5 +1,5 @@
 # Sales_Exploratory_Data_Analysis
-Business Insights & Sales Analysis – SQL Project
+
 This project delivers a comprehensive, data-driven sales and customer analysis using advanced SQL techniques on a retail database. Designed to empower business stakeholders with actionable insights, the script explores everything from high-level performance metrics to deep-dive customer and product segmentation.
 
 Key features include:
